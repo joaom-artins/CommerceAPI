@@ -22,6 +22,7 @@ namespace ComerceAPI.Context
             modelBuilder.Entity<Product>().Property(p => p.Name).HasMaxLength(128);
             modelBuilder.Entity<Product>().Property(p => p.ImageUrl).HasMaxLength(256);
             modelBuilder.Entity<Product>().Property(p => p.Description).HasMaxLength(256);
+         
             modelBuilder.Entity<Category>().Property(c => c.Name).HasMaxLength(128);
 
            

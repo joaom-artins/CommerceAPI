@@ -21,7 +21,7 @@ namespace ComerceAPI.Controllers
         {
             return await _dbContext.Categories.ToListAsync();
         }
-        [HttpGet ("id:int")]
+        [HttpGet ("{id:int}")]
         public async Task<ActionResult<Category>> Get(int id)
         {
             var categoryId= await _dbContext.Categories.FindAsync(id);
@@ -33,7 +33,7 @@ namespace ComerceAPI.Controllers
         [HttpPost]
         public async Task<ActionResult<Category>> Post(Category category) 
         {
-            if(category == null)
+            if(category is null)
             {
                 return BadRequest();
             }
@@ -41,7 +41,7 @@ namespace ComerceAPI.Controllers
             await _dbContext.SaveChangesAsync();
             return Ok(category);
         }
-        [HttpPut ("id:int")]
+        [HttpPut ("{id:int}")]
         public async Task<ActionResult<Category>> Put(int id,Category category)
         {
             
@@ -54,7 +54,7 @@ namespace ComerceAPI.Controllers
             await _dbContext.SaveChangesAsync();
             return Ok(categoryId);
         }
-        [HttpDelete]
+        [HttpDelete ("{id:int}")]
         public async Task<ActionResult<Category>> Delete(int id)
         {
             var categoryId = await _dbContext.Categories.FindAsync(id);
