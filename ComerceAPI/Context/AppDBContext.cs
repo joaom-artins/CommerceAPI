@@ -18,7 +18,7 @@ namespace ComerceAPI.Context
           
             modelBuilder.Entity<Cart>().Property(c => c.ClientId);
             modelBuilder.Entity<Client>().Property(c => c.Name).HasMaxLength(128);
-            modelBuilder.Entity<Client>().Property(c => c.CPF).HasMaxLength(1);
+            modelBuilder.Entity<Client>().Property(c => c.CPF).HasMaxLength(11);
             modelBuilder.Entity<Product>().Property(p => p.Name).HasMaxLength(128);
             modelBuilder.Entity<Product>().Property(p => p.ImageUrl).HasMaxLength(256);
             modelBuilder.Entity<Product>().Property(p => p.Description).HasMaxLength(256);
